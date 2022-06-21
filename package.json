@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server.ts",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
-    "test": "ENV=test node node_modules/db-migrate/bin/db-migrate --env test up && jasmine-ts && node node_modules/db-migrate/bin/db-migrate db:drop test",
+    "test": "ENV=test node node_modules/db-migrate/bin/db-migrate --env test up && jasmine-ts && node node_modules/db-migrate/bin/db-migrate reset --env test",
     "migrate": "node node_modules/db-migrate/bin/db-migrate --env test up && node node_modules/db-migrate/bin/db-migrate up",
     "tsc": "tsc"
   },

@@ -17,6 +17,7 @@ const  {
 // environment vars referenced to connect
 
 let Client
+console.log(ENV)
 
 if (ENV == 'test') {
     Client = new Pool({
