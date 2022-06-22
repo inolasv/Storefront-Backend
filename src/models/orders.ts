@@ -1,14 +1,14 @@
 import Client from "../database";
 
 export type Order = {
-    id: number,
-    user_id: string,
+    id?: number,
+    user_id: number,
     status: string,
 }
 
 export class OrderStore {
 
-    async currentOrder(user_id: string): Promise<Order> {
+    async currentOrder(user_id: number): Promise<Order> {
         // auth. token required!!
         try {
             const conn = await Client.connect();
