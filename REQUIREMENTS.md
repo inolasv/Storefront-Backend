@@ -8,7 +8,7 @@ These are the notes from a meeting with the frontend developer that describe wha
 - Index --> '/products' [GET] 
 - Show  --> '/products/:id' [GET]
 - Create [token required] --> '/products' [POST]
-- [OPTIONAL] Top 5 most popular products --> '/most-popular-products' [GET]
+- [OPTIONAL] Top 5 most popular products
 - [OPTIONAL] Products by category (args: product category)
 
 #### Users
@@ -17,7 +17,7 @@ These are the notes from a meeting with the frontend developer that describe wha
 - Create [token required] --> '/users' [POST]
 
 #### Orders
-- Current Order by user (args: user id)[token required] --> '/orders/users/:id' [GET]
+- Current Order by user (args: user id)[token required] --> '/orders/:user_id' [GET]
 - [OPTIONAL] Completed Orders by user (args: user id)[token required] --> 
 
 ## Data Shapes
@@ -31,6 +31,7 @@ These are the notes from a meeting with the frontend developer that describe wha
 - id
 - firstName
 - lastName
+
 - password
 
 #### Orders
