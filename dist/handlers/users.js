@@ -106,7 +106,6 @@ var create = function (_req, res) { return __awaiter(void 0, void 0, void 0, fun
                 return [3 /*break*/, 4];
             case 3:
                 err_3 = _a.sent();
-                console.log(err_3);
                 res.status(400);
                 res.json(err_3);
                 return [3 /*break*/, 4];

@@ -11,7 +11,6 @@ var _a = process.env, POSTGRES_HOST = _a.POSTGRES_HOST, POSTGRES_DB = _a.POSTGRE
 // this is where we are connecting to the database, calling it client
 // environment vars referenced to connect
 var Client;
-console.log(ENV);
 if (ENV == 'test') {
     Client = new pg_1.Pool({
         host: POSTGRES_HOST,

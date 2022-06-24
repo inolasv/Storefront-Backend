@@ -37,7 +37,6 @@ const create = async(_req: Request, res: Response) => {
         var token = jwt.sign({ user: newUser }, process.env.TOKEN_SECRET as string);
         res.json(token);
     } catch(err) {
-        console.log(err);
         res.status(400);
         res.json(err);
     }

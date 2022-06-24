@@ -17,7 +17,6 @@ const  {
 // environment vars referenced to connect
 
 let Client
-console.log(ENV)
 
 if (ENV == 'test') {
     Client = new Pool({
@@ -36,5 +35,6 @@ if (ENV == 'dev') {
         password: POSTGRES_PASSWORD
     }); 
 }
+
 
 export default Client as Pool;

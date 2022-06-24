@@ -1,13 +1,11 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { Order, OrderStore } from '../models/orders';
 import jwt from 'jsonwebtoken';
-import { createAbstractBuilder } from 'typescript';
 
 const store = new OrderStore();
 
 const orderRoutes = (app: express.Application) => {
     app.get('/orders', authenticateToken, currentOrder);
-    //app.get('/orders/?user_id', authenticateToken, currentOrder);
     app.get('/orders/:id', authenticateToken, show);
     app.post('/orders', authenticateToken, create);
 }
