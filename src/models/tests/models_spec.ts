@@ -26,8 +26,8 @@ describe("--- TESTING PRODUCTS MODELS ---", () => {
         });
         it("index function returns proper length", async () => {
             const result = await p_store.index();
-            expect(result.length).toEqual(2);
-            expect(result[0].name).toEqual("strawberries" || "apples");
+            expect(result.length).toEqual(3);
+            expect(result[0].name).toEqual("pillows");
 
         });
     });
@@ -38,14 +38,12 @@ describe("--- TESTING PRODUCTS MODELS ---", () => {
         });
         it("show function properly shows", async () => {
             p_store.create("chocolate", 28);
-            const result = await p_store.show(3);
+            const result = await p_store.show(4);
             expect(result.name).toEqual("chocolate");
             expect(result.price).toEqual(28);
 
         });
     });
-
-    
     
 });
 
@@ -80,14 +78,14 @@ describe("--- TESTING USERS MODELS ---", () => {
         it ("index function exists", async () => {
             expect(u_store.index()).toBeDefined();
         });
-        it("index function returns proper length", async () => {
+        it("index function returns proper vals", async () => {
             const result = await u_store.index();
-            expect(result.length).toEqual(2);
+            expect(result.length).toEqual(3);
 
-            expect(result[0].first_name).toEqual("user1");
-            expect(result[1].first_name).toEqual("user2");
-            expect(result[0].last_name).toEqual("last1");
-            expect(result[1].last_name).toEqual("last2");
+            expect(result[1].first_name).toEqual("user1");
+            expect(result[2].first_name).toEqual("user2");
+            expect(result[1].last_name).toEqual("last1");
+            expect(result[2].last_name).toEqual("last2");
 
 
         });
@@ -106,7 +104,7 @@ describe("--- TESTING USERS MODELS ---", () => {
 
             await u_store.create(add);
 
-            const result = await u_store.show(3);
+            const result = await u_store.show(4);
            
             expect(result.first_name).toEqual("user3");
             expect(result.last_name).toEqual("last3");
@@ -158,7 +156,7 @@ describe("--- TESTING ORDERS MODELS ---", () => {
 
         it("show function properly shows", async () => {
             const newone = await o_store.create(1, "completed");
-            const result = await o_store.show(4);
+            const result = await o_store.show(5);
             expect(result.user_id).toEqual(1);
             expect(result.status).toEqual("completed");
         });

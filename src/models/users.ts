@@ -9,7 +9,7 @@ export type User = {
 }
 
 const pepper = process.env.BYCRPT_PASSWORD as string
-const saltRounds  = process.env.SALT_ROUNDS as string
+const saltRounds  = process.env.SALT_ROUNDS
 
 
 export class UserStore {
@@ -39,7 +39,7 @@ export class UserStore {
         
             const hash = bycrpt.hashSync(
                 u.password_digest + pepper,
-                parseInt(saltRounds)
+                parseInt(saltRounds as string)
             );
 
             const result = await conn.query(sql, [u.first_name, u.last_name, hash]);
